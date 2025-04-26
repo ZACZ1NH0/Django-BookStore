@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Book Store 📚</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Welcome to the Book Store 📚</h1>
+
+    <h2 class="mb-4">Featured Books</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for book in featured_books %}
+        <div class="col">
+            <div class="card h-100">
+                {% if book.image %}
+                    <img src="{{ book.image }}" class="card-img-top" alt="Book Image" style="height: 300px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text"><strong>Price:</strong> {{ book.price }}$</p>
+                    <p class="card-text"><strong>Rating:</strong> {{ book.rating }}⭐</p>
+                    <a href="{% url 'book_detail' book.pk %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No books available.</p>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{% url 'book_list' %}" class="btn btn-secondary">View All Books</a>
+    </div>
+</div>
+</body>
+</html>
