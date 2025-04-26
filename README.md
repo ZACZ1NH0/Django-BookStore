@@ -76,7 +76,7 @@ Bootstrap: A front-end framework to design a responsive and attractive interface
 Python 3.x: The programming language used for development.
 
 # 📄 License
-This project is licensed under the MIT License - see the LICENSE file for more details.
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for more details.
 
 # 📝 Contributing
 Feel free to fork this repository and create pull requests. If you have any suggestions or issues, please open an issue on the GitHub repository.
